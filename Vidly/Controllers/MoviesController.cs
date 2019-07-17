@@ -15,13 +15,25 @@ namespace Vidly.Controllers
         {
             var movie = new Movie() { Name = "Shrek" };
 
+            var customers = new List<Customer>
+            {
+                new Customer { Name = "Customer 1" },
+                new Customer { Name = "Customer 2" }
+            };
+
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
+
             /*
              * Don't use the ViewData or ViewBag to pass data to the View
             ViewData["RandomMovie"] = movie;
             ViewBag.RandomMovie = movie;
             */
 
-            return View(movie);
+            return View(viewModel);
             //return Content("Hellow World");
             //return HttpNotFound();
             //return new EmptyResult();
