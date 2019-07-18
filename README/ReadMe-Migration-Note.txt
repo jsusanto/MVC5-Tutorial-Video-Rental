@@ -29,3 +29,13 @@ Example:
 
 // to execute the migration
 >update-database
+
+// Add a new column in the Customer Model
+PM> add-migration AddIsSubscribedToCustomer
+Scaffolding migration 'AddIsSubscribedToCustomer'.
+
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201907180549575_AddIsSubscribedToCustomer].
+Applying explicit migration: 201907180549575_AddIsSubscribedToCustomer.
+Running Seed method.
