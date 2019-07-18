@@ -53,7 +53,18 @@ namespace Vidly.Controllers
             if (String.IsNullOrWhiteSpace(sortBy))
                 sortBy = "Name";
 
-            return Content(String.Format("PageIndex={0}&sortBy={1}", pageIndex, sortBy));
+            var movies = GetMovies();
+
+            //return Content(String.Format("PageIndex={0}&sortBy={1}", pageIndex, sortBy));
+            return View(movies);
+        }
+
+        private IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie> {
+                new Movie { Name = "Shrek" },
+                new Movie { Name = "Wall-E" }
+            };
         }
 
         [Route("movies/released/{year}/{month:regex(\\d{4}):range(1,12)}")]
