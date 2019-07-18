@@ -39,3 +39,12 @@ Specify the '-Verbose' flag to view the SQL statements being applied to the targ
 Applying explicit migrations: [201907180549575_AddIsSubscribedToCustomer].
 Applying explicit migration: 201907180549575_AddIsSubscribedToCustomer.
 Running Seed method.
+
+//Add Prepopulate script using migration
+PM> add-migration PopulateMembershipTypes
+Scaffolding migration 'PopulateMembershipTypes'.
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201907180632499_PopulateMembershipTypes].
+Applying explicit migration: 201907180632499_PopulateMembershipTypes.
+Running Seed method.
