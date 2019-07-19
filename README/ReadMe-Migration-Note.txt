@@ -56,3 +56,13 @@ PM> update-database
 Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
 Applying explicit migrations: [201907190001104_ApplyAnnotationToCustomerName].
 
+
+//Add Name to MembershipType Schema
+PM> add-migration AddNameToMembershipType
+Scaffolding migration 'AddNameToMembershipType'.
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201907190200528_AddNameToMembershipType].
+Applying explicit migration: 201907190200528_AddNameToMembershipType.
+Running Seed method.
+
