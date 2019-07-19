@@ -5,11 +5,24 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModel;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Movies/Random
         public ActionResult Random()
         {
@@ -45,6 +58,13 @@ namespace Vidly.Controllers
             return Content("Id = " + id);
         }
 
+        public ActionResult Details(int id)
+        {
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+
+            return View(movie);
+        }
+
         public ActionResult Index(int? pageIndex, string sortBy)
         {
             if (!pageIndex.HasValue)
@@ -53,7 +73,8 @@ namespace Vidly.Controllers
             if (String.IsNullOrWhiteSpace(sortBy))
                 sortBy = "Name";
 
-            var movies = GetMovies();
+            //var movies = GetMovies();
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
 
             //return Content(String.Format("PageIndex={0}&sortBy={1}", pageIndex, sortBy));
             return View(movies);
