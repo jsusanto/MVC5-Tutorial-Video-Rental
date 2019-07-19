@@ -48,3 +48,11 @@ Specify the '-Verbose' flag to view the SQL statements being applied to the targ
 Applying explicit migrations: [201907180632499_PopulateMembershipTypes].
 Applying explicit migration: 201907180632499_PopulateMembershipTypes.
 Running Seed method.
+
+//Apply Annotation to Customer Name
+PM> add-migration ApplyAnnotationToCustomerName
+Scaffolding migration 'ApplyAnnotationToCustomerName'.
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201907190001104_ApplyAnnotationToCustomerName].
+
