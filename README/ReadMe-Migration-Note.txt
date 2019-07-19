@@ -66,3 +66,13 @@ Applying explicit migrations: [201907190200528_AddNameToMembershipType].
 Applying explicit migration: 201907190200528_AddNameToMembershipType.
 Running Seed method.
 
+//Add Birthday to Customer Schema
+PM> add-migration BirthDateToCustomerSchema
+Scaffolding migration 'BirthDateToCustomerSchema'.
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201907190218369_BirthDateToCustomerSchema].
+Applying explicit migration: 201907190218369_BirthDateToCustomerSchema.
+Running Seed method.
+
+
