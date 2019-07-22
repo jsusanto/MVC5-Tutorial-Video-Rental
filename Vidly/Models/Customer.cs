@@ -19,8 +19,10 @@ namespace Vidly.Models
         public MembershipType MembershipType { get; set; }
 
         //Entity Framework will recognise this convention and treat this ID as the foreign key
+        [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
 
+        [Display(Name = "Date of Birth")]
         public DateTime? Birthdate { get; set; }
     }
 }
