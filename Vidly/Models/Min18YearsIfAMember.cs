@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using Vidly.Models;
 
 namespace Vidly.Models
 {
@@ -13,7 +14,7 @@ namespace Vidly.Models
             //Access to containing class
             var customer = (Customer)validationContext.ObjectInstance;
 
-            if(customer.MembershipTypeId == 0 || customer.MembershipTypeId == 1) //Pay as You Go
+            if(customer.MembershipTypeId == MembershipType.Unknown || customer.MembershipTypeId == MembershipType.PayAsYouGo) //Pay as You Go
             {
                 return ValidationResult.Success;
             }
