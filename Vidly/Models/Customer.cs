@@ -10,7 +10,7 @@ namespace Vidly.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter customer's name")]
         [StringLength(255)]
         public string Name { get; set; }
 
@@ -20,7 +20,7 @@ namespace Vidly.Models
 
         //Entity Framework will recognise this convention and treat this ID as the foreign key
         [Display(Name = "Membership Type")]
-        public byte MembershipTypeId { get; set; }
+        public byte MembershipTypeId { get; set; } //since it's byte - implicitly required; It's not if it's nullable byte
 
         [Display(Name = "Date of Birth")]
         public DateTime? Birthdate { get; set; }
