@@ -23,6 +23,7 @@ namespace Vidly.Models
         public byte MembershipTypeId { get; set; } //since it's byte - implicitly required; It's not if it's nullable byte
 
         [Display(Name = "Date of Birth")]
+        [Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
     }
 }
