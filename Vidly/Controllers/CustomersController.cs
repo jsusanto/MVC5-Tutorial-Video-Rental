@@ -60,6 +60,7 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken] //To Perform / Activate the anti forgery token checking
         public ActionResult Save(Customer customer)
         {
             //To activate validation
