@@ -75,4 +75,13 @@ Applying explicit migrations: [201907190218369_BirthDateToCustomerSchema].
 Applying explicit migration: 201907190218369_BirthDateToCustomerSchema.
 Running Seed method.
 
-
+//Install the auto-mapper package manager
+PM> install-package automapper -version:4.1
+Attempting to gather dependency information for package 'automapper.4.1.0' with respect to project 'Vidly', targeting '.NETFramework,Version=v4.5.2'
+Attempting to resolve dependencies for package 'automapper.4.1.0' with DependencyBehavior 'Lowest'
+Resolving actions to install package 'automapper.4.1.0'
+Resolved actions to install package 'automapper.4.1.0'
+Adding package 'AutoMapper.4.1.0' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'AutoMapper.4.1.0' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'AutoMapper.4.1.0' to 'packages.config'
+Successfully installed 'AutoMapper 4.1.0' to Vidly
