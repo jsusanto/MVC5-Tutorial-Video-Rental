@@ -62,7 +62,7 @@
             $("#customers").on("click", ".js-delete", function (result) {
                 var button = $(this);
 
-                bootbox.confirm("Are you sure you want to delete the customer record?", function () {
+                bootbox.confirm("Are you sure you want to delete the customer record?", function (result) {
                     if (result) {
                         $.ajax({
                             url: "/api/customers/" + button.attr("data-customer-id"),
