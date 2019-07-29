@@ -8,6 +8,9 @@ namespace Vidly
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+
+            //Add restriction globally to force the user to login
+            filters.Add(new AuthorizeAttribute());
         }
     }
 }

@@ -1,3 +1,5 @@
+Use all password (registered users): Password123!
+
 To make your Visual Studio better or more productive:
 1. Tools - Extensions and Updates - online - visual studio productivity power tool
 2. Tools - Extensions and Updates - online - web essential
