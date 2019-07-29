@@ -40,9 +40,23 @@ else
 {
     <script>
         $(document).ready(function () {
-            $("#customers .js-delete").on("click", function () {
+            $("#customers .js-delete").on("click", function (result) {
                 var button = $(this);
 
+                bootbox.confirm("Are you sure you want to delete the customer record?", function () {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/customers/" + button.attr("data-customer-id"),
+                            method: "DELETE",
+                            success: function () {
+                                button.parents("tr").remove();
+                            }
+                        });
+                    }
+                });
+
+                //Use normal native javascript confirm function
+                /*
                 if (confirm('Are you sure you want to delete the customer record?')) {
                     $.ajax({
                         url: "/api/customers/" + button.attr("data-customer-id"),
@@ -51,9 +65,8 @@ else
                             button.parents("tr").remove();
                         }
                     });
-                } else {
+                }*/
 
-                }
             });
         });
     </script>

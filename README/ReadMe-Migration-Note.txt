@@ -85,3 +85,14 @@ Adding package 'AutoMapper.4.1.0' to folder 'E:\MVC5-Tutorial-Video-Rental\packa
 Added package 'AutoMapper.4.1.0' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
 Added package 'AutoMapper.4.1.0' to 'packages.config'
 Successfully installed 'AutoMapper 4.1.0' to Vidly
+
+//Install bootbox js to customise the modal dialog
+PM> install-package bootbox -version:4.3.0
+Attempting to gather dependency information for package 'bootbox.4.3.0' with respect to project 'Vidly', targeting '.NETFramework,Version=v4.5.2'
+Attempting to resolve dependencies for package 'bootbox.4.3.0' with DependencyBehavior 'Lowest'
+Resolving actions to install package 'bootbox.4.3.0'
+Resolved actions to install package 'bootbox.4.3.0'
+Adding package 'bootbox.4.3.0' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'bootbox.4.3.0' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'bootbox.4.3.0' to 'packages.config'
+Successfully installed 'bootbox 4.3.0' to Vidly
