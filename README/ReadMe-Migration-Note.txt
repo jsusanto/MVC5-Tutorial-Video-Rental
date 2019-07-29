@@ -96,3 +96,14 @@ Adding package 'bootbox.4.3.0' to folder 'E:\MVC5-Tutorial-Video-Rental\packages
 Added package 'bootbox.4.3.0' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
 Added package 'bootbox.4.3.0' to 'packages.config'
 Successfully installed 'bootbox 4.3.0' to Vidly
+
+//Install jquery datatables for pagination, search
+PM> install-package jquery.datatables -version:1.10.11
+Attempting to gather dependency information for package 'jquery.datatables.1.10.11' with respect to project 'Vidly', targeting '.NETFramework,Version=v4.5.2'
+Attempting to resolve dependencies for package 'jquery.datatables.1.10.11' with DependencyBehavior 'Lowest'
+Resolving actions to install package 'jquery.datatables.1.10.11'
+Resolved actions to install package 'jquery.datatables.1.10.11'
+Adding package 'jquery.datatables.1.10.11' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'jquery.datatables.1.10.11' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'jquery.datatables.1.10.11' to 'packages.config'
+Successfully installed 'jquery.datatables 1.10.11' to Vidly
