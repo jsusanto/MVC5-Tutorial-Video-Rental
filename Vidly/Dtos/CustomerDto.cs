@@ -17,6 +17,7 @@ namespace Vidly.Dtos
 
         public bool IsSubscribedToNewsletter { get; set; }
 
+        public MembershipTypeDto MembershipType { get; set; }
         public byte MembershipTypeId { get; set; } //since it's byte - implicitly required; It's not if it's nullable byte
 
         public DateTime? Birthdate { get; set; }
