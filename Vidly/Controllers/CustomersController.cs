@@ -32,9 +32,11 @@ namespace Vidly.Controllers
             //Populate Manual Customer Records
             //var customers = GetCustomers();
 
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            //Comment out because the list of customers dislayed from Ajax JQuery
+            //var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            //return View(customers);
 
-            return View(customers);
+            return View();
         }
 
         public ActionResult Details(int Id)
