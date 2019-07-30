@@ -122,3 +122,13 @@ Specify the '-Verbose' flag to view the SQL statements being applied to the targ
 Applying explicit migrations: [201907300040363_SeedUsers].
 Applying explicit migration: 201907300040363_SeedUsers.
 Running Seed method.
+
+//Add Driving License to Application User
+PM> add-migration AddDrivingLicenseToApplicationUser
+Scaffolding migration 'AddDrivingLicenseToApplicationUser'.
+
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201907300448211_AddDrivingLicenseToApplicationUser].
+Applying explicit migration: 201907300448211_AddDrivingLicenseToApplicationUser.
+Running Seed method.
