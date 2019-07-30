@@ -1,4 +1,7 @@
 Use all password (registered users): Password123!
+2 users
+- admin@jsusanto.com *assigned CanManageMovie Role
+- guest@jsusanto.com 
 
 To make your Visual Studio better or more productive:
 1. Tools - Extensions and Updates - online - visual studio productivity power tool
@@ -109,3 +112,13 @@ Adding package 'jquery.datatables.1.10.11' to folder 'E:\MVC5-Tutorial-Video-Ren
 Added package 'jquery.datatables.1.10.11' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
 Added package 'jquery.datatables.1.10.11' to 'packages.config'
 Successfully installed 'jquery.datatables 1.10.11' to Vidly
+
+//Add initial users
+PM> add-migration SeedUsers
+Scaffolding migration 'SeedUsers'.
+
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201907300040363_SeedUsers].
+Applying explicit migration: 201907300040363_SeedUsers.
+Running Seed method.
