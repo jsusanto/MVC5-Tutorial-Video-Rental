@@ -11,6 +11,9 @@ namespace Vidly
 
             //Add restriction globally to force the user to login
             filters.Add(new AuthorizeAttribute());
+
+            //Force to use HTTPS
+            filters.Add(new RequireHttpsAttribute());
         }
     }
 }

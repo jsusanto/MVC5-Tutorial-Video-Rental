@@ -132,3 +132,9 @@ Specify the '-Verbose' flag to view the SQL statements being applied to the targ
 Applying explicit migrations: [201907300448211_AddDrivingLicenseToApplicationUser].
 Applying explicit migration: 201907300448211_AddDrivingLicenseToApplicationUser.
 Running Seed method.
+
+//For Facebook Authentication, you need to install - Microsoft.Owin.Security.Facebook
+PM> Install-Package Microsoft.Owin.Security.Facebook
+Attempting to gather dependency information for package 'Microsoft.Owin.Security.Facebook.4.0.1' with respect to project 'Vidly', targeting '.NETFramework,Version=v4.5.2'
+Attempting to resolve dependencies for package 'Microsoft.Owin.Security.Facebook.4.0.1' with DependencyBehavior 'Lowest'
+
