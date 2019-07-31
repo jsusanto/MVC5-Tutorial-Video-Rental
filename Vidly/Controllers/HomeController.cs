@@ -15,7 +15,7 @@ namespace Vidly.Controllers
         public ActionResult Index()
         {
             return View();
-        }
+        }      
 
         //To disable caching
         [OutputCache(Duration = 0, VaryByParam = "*", NoStore = true)]

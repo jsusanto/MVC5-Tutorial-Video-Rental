@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Vidly.Models.Genre>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+<ul>
+    @foreach (var genre in Model)
+    {
+        <li>@genre.Name</li>
+    }
+</ul>
+
+<table id="customers" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Membership Type</th>
+            <th>Discount Rate</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            //Initialise DataTable
+            var table = $("#customers").DataTable({
+                ajax: {
+                    url: "/api/customers",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function(data, type, customer){
+                            return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
+                        }
+                    },
+                    {
+                        data: "membershipType.name"
+                    },
+                    {
+                        data: "membershipType.discountRate"
+                    },
+                    {
+                        data: "id",
+                        render: function (data, type, customer) {
+                            return "<a href='/customers/edit/" + customer.id + "'>Edit</a>";
+                        }
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
+                        }
+                    }
+                ]
+            });
+
+            $("#customers").on("click", ".js-delete", function (result) {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure you want to delete the customer record?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/customers/" + button.attr("data-customer-id"),
+                            method: "DELETE",
+                            success: function () {
+                                //To remove the row from dataTable - fix the bug
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+
+                //Use normal native javascript confirm function
+                /*
+                if (confirm('Are you sure you want to delete the customer record?')) {
+                    $.ajax({
+                        url: "/api/customers/" + button.attr("data-customer-id"),
+                        method: "DELETE",
+                        success: function () {
+                            button.parents("tr").remove();
+                        }
+                    });
+                }*/
+
+            });
+        });
+    </script>
+}

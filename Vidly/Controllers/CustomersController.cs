@@ -7,6 +7,7 @@ using Vidly.Models;
 using System.Data.Entity;
 using Vidly.ViewModel;
 using System.Data.Entity.Validation;
+using System.Runtime.Caching;
 
 namespace Vidly.Controllers
 {
@@ -39,6 +40,16 @@ namespace Vidly.Controllers
             return View();
         }
 
+        public ActionResult IndexCache()
+        {
+            //Example of Caching Data
+            if (MemoryCache.Default["Genre"] == null)
+                MemoryCache.Default["Genre"] = _context.Genres.ToList();
+
+            var genres = MemoryCache.Default["Genre"] as IEnumerable<Genre>; 
+
+            return View(genres);
+        }
         public ActionResult Details(int Id)
         {
             //Source from the manual populated data
