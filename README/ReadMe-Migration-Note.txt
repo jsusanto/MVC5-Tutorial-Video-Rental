@@ -138,3 +138,21 @@ PM> Install-Package Microsoft.Owin.Security.Facebook
 Attempting to gather dependency information for package 'Microsoft.Owin.Security.Facebook.4.0.1' with respect to project 'Vidly', targeting '.NETFramework,Version=v4.5.2'
 Attempting to resolve dependencies for package 'Microsoft.Owin.Security.Facebook.4.0.1' with DependencyBehavior 'Lowest'
 
+//Install Glimpse for diagnostic and see insight on your application
+PM> install-package glimpse.mvc5
+Attempting to gather dependency information for package 'glimpse.mvc5.1.5.3' with respect to project 'Vidly', targeting '.NETFramework,Version=v4.5.2'
+Attempting to resolve dependencies for package 'glimpse.mvc5.1.5.3' with DependencyBehavior 'Lowest'
+Resolving actions to install package 'glimpse.mvc5.1.5.3'
+Resolved actions to install package 'glimpse.mvc5.1.5.3'
+...
+
+PM> install-package glimpse.ef6
+Attempting to gather dependency information for package 'glimpse.ef6.1.6.5' with respect to project 'Vidly', targeting '.NETFramework,Version=v4.5.2'
+Attempting to resolve dependencies for package 'glimpse.ef6.1.6.5' with DependencyBehavior 'Lowest'
+Resolving actions to install package 'glimpse.ef6.1.6.5'
+Resolved actions to install package 'glimpse.ef6.1.6.5'
+...
+
+To open glimpse locally https://localhost:44386/glimpse.axd
+Glimpse is purposely set up and configured on localhost, if you want to implement on production you need to follow the instruction in the 
+Glimpse documentation.
