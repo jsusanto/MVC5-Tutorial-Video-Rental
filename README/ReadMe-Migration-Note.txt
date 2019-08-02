@@ -156,3 +156,12 @@ Resolved actions to install package 'glimpse.ef6.1.6.5'
 To open glimpse locally https://localhost:44386/glimpse.axd
 Glimpse is purposely set up and configured on localhost, if you want to implement on production you need to follow the instruction in the 
 Glimpse documentation.
+
+//Add Rental Schema
+PM> add-migration AddRentalSchema
+Scaffolding migration 'AddRentalSchema'.
+
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201908020225290_AddRentalSchema].
+Applying explicit migration: 201908020225290_AddRentalSchema.
