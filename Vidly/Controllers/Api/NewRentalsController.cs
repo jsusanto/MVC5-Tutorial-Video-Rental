@@ -21,21 +21,20 @@ namespace Vidly.Controllers.Api
         [HttpPost]
         public IHttpActionResult CreateNewRentals(NewRentalDto newRental)
         {
-            //Why using .single? It's for internal use and We're assuming that the customer will send the right customer ID
-            /*
-             if We want to use this API for external use then we need to use .SingleOrDefault and check whether it's null
-             if ( customer == null )
-                 return BadRequest('Invalid Customer ID');
-             */
             var customer = _context.Customers
                 .Single(c => c.Id == newRental.CustomerId);
 
             //Translate to SQL statement as select * from [table] where id in ()
             var movies = _context.Movies
-                .Where(m => newRental.MovieIds.Contains(m.Id));
+                .Where(m => newRental.MovieIds.Contains(m.Id)).ToList();
 
             foreach(var movie in movies)
             {
+                if (movie.NumberAvailable == 0)
+                    return BadRequest("Movie is not available");
+
+                movie.NumberAvailable--;
+
                 var rental = new Rental
                 {
                     Customer = customer,
