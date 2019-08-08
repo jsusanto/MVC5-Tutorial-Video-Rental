@@ -176,3 +176,14 @@ Adding package 'Twitter.Typeahead.0.11.1' to folder 'E:\MVC5-Tutorial-Video-Rent
 Added package 'Twitter.Typeahead.0.11.1' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
 Added package 'Twitter.Typeahead.0.11.1' to 'packages.config'
 Successfully installed 'Twitter.Typeahead 0.11.1' to Vidly
+
+//Add toastr message box
+PM> install-package toastr
+Attempting to gather dependency information for package 'toastr.2.1.1' with respect to project 'Vidly', targeting '.NETFramework,Version=v4.5.2'
+Attempting to resolve dependencies for package 'toastr.2.1.1' with DependencyBehavior 'Lowest'
+Resolving actions to install package 'toastr.2.1.1'
+Resolved actions to install package 'toastr.2.1.1'
+Adding package 'toastr.2.1.1' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'toastr.2.1.1' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'toastr.2.1.1' to 'packages.config'
+Successfully installed 'toastr 2.1.1' to Vidly
