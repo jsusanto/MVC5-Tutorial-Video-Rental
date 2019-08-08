@@ -33,7 +33,7 @@
         //viewmodel
         vm = {
             customerId: "",
-            movieId: ""
+            movieIds: []
         };
 
         /* auto-complete customers */
@@ -77,7 +77,11 @@
             display: 'name',
             source: movies
         }).on("typeahead:select", function (e, movie) {
+            $("#movies").append("<li>" + movie.name + "</li>");
 
+            $("#movie").typeahead("val", "");
+
+            vm.movieIds.push(movie.id);
         });
 
     });
