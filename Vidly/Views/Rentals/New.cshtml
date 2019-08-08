@@ -14,13 +14,13 @@
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
-            <input id="customer" type="text" value="" class="form-control" />
+            <input id="customer" name="customer" data-rule-validCustomer="true"  type="text" value="" class="form-control" required />
         </div>
     </div>
     <div class="form-group">
         <label>Movie</label>
         <div class="tt-container">
-            <input id="movie" type="text" value="" class="form-control" />
+            <input id="movie" name="movie" data-rule-atLeastOneMovie="true" type="text" value="" class="form-control" />
         </div>
     </div>
 
@@ -36,11 +36,11 @@
 
 @section scripts
 {
+@Scripts.Render("~/bundles/jqueryval")
 <script>
     $(document).ready(function () {
         //viewmodel
         vm = {
-            customerId: "",
             movieIds: []
         };
 
@@ -92,23 +92,46 @@
             vm.movieIds.push(movie.id);
         });
 
-        //Submit button action
-        $("#newRental").submit(function (e) {
-            e.preventDefault(); //This will prevent the form to submit normally
+        $.validator.addMethod("atLeastOneMovie", function () {
+            return vm.movieIds.length > 0;
+        }, "Please select at least one movie");
 
-            $.ajax({
-                url: "/api/newRentals",
-                method: "post",
-                data: vm
-            })
-            .done(function(){
-                toastr.success("Rentals successfully recorded.");
-            })
-            .fail(function () {
-                toastr.error("Something unexpected happened.");
-            });
+        //Create a custom validator to validate if the user is not found in the db when typing on the textbox
+        $.validator.addMethod("validCustomer", function () {
+            return vm.customerId && vm.customerId !== 0;
+        }, "Please select the valid customer");
+
+        //Activate client side validation, this plugs in validation in the form
+        //We need to put the submit button logic inside the validation
+        var validator = $("#newRental").validate({
+            submitHandler: function () {
+                $.ajax({
+                    url: "/api/newRentals",
+                    method: "post",
+                    data: vm
+                })
+                .done(function () {
+                    toastr.success("Rentals successfully recorded.");
+
+                    //Clear the form when it's been submitted
+                    $("#customer").typeahead("val", "");
+                    $("#movie").typeahead("val", "");
+                    $("#movies").empty();
+
+                    //reset the view model
+                    vm = {
+                        movieIds: []
+                    };
+
+                    validator.resetForm(); //Reset the form in terms of validation
+                })
+                .fail(function () {
+                    toastr.error("Something unexpected happened.");
+                });
+
+                return false;
+            }
         });
-
     });
 </script>
 }
