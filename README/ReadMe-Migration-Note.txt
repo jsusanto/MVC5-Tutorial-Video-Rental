@@ -165,3 +165,14 @@ PM> update-database
 Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
 Applying explicit migrations: [201908020225290_AddRentalSchema].
 Applying explicit migration: 201908020225290_AddRentalSchema.
+
+//To implement auto-completion
+PM> install-package Twitter.Typeahead
+Attempting to gather dependency information for package 'Twitter.Typeahead.0.11.1' with respect to project 'Vidly', targeting '.NETFramework,Version=v4.5.2'
+Attempting to resolve dependencies for package 'Twitter.Typeahead.0.11.1' with DependencyBehavior 'Lowest'
+Resolving actions to install package 'Twitter.Typeahead.0.11.1'
+Resolved actions to install package 'Twitter.Typeahead.0.11.1'
+Adding package 'Twitter.Typeahead.0.11.1' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'Twitter.Typeahead.0.11.1' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'Twitter.Typeahead.0.11.1' to 'packages.config'
+Successfully installed 'Twitter.Typeahead 0.11.1' to Vidly
