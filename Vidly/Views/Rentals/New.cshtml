@@ -5,7 +5,7 @@
 
 <h2>New Rental Form</h2>
 
-<form>
+<form id="newRental">
     <!--
         Zen Coding
         div.form-group>label+input[type='text'].form-control
@@ -90,6 +90,23 @@
             $("#movie").typeahead("val", "");
 
             vm.movieIds.push(movie.id);
+        });
+
+        //Submit button action
+        $("#newRental").submit(function (e) {
+            e.preventDefault(); //This will prevent the form to submit normally
+
+            $.ajax({
+                url: "/api/newRentals",
+                method: "post",
+                data: vm
+            })
+            .done(function(){
+                console.log("done");
+            })
+            .fail(function () {
+
+            });
         });
 
     });
