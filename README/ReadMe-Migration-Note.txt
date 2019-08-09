@@ -193,3 +193,24 @@ C:\Windows\system32>aspnet_regiis -pef "appSettings" "E:\MVC5-Tutorial-Video-Ren
 
 //To decrypt
 C:\Windows\system32>aspnet_regiis -pdf "appSettings" "E:\MVC5-Tutorial-Video-Rental\Deploy"
+
+//Handle - Error Logging Modules and Handlers
+PM> install-package Elmah
+Attempting to gather dependency information for package 'Elmah.1.2.2' with respect to project 'Vidly', targeting '.NETFramework,Version=v4.5.2'
+Attempting to resolve dependencies for package 'Elmah.1.2.2' with DependencyBehavior 'Lowest'
+Resolving actions to install package 'Elmah.1.2.2'
+Resolved actions to install package 'Elmah.1.2.2'
+  GET https://api.nuget.org/v3-flatcontainer/elmah.corelibrary/1.2.2/elmah.corelibrary.1.2.2.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/elmah.corelibrary/1.2.2/elmah.corelibrary.1.2.2.nupkg 37ms
+Installing elmah.corelibrary 1.2.2.
+Adding package 'elmah.corelibrary.1.2.2' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'elmah.corelibrary.1.2.2' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'elmah.corelibrary.1.2.2' to 'packages.config'
+Successfully installed 'elmah.corelibrary 1.2.2' to Vidly
+  GET https://api.nuget.org/v3-flatcontainer/elmah/1.2.2/elmah.1.2.2.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/elmah/1.2.2/elmah.1.2.2.nupkg 37ms
+Installing elmah 1.2.2.
+Adding package 'elmah.1.2.2' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'elmah.1.2.2' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
+Added package 'elmah.1.2.2' to 'packages.config'
+Successfully installed 'elmah 1.2.2' to Vidly
