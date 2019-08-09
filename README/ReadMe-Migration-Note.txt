@@ -187,3 +187,9 @@ Adding package 'toastr.2.1.1' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
 Added package 'toastr.2.1.1' to folder 'E:\MVC5-Tutorial-Video-Rental\packages'
 Added package 'toastr.2.1.1' to 'packages.config'
 Successfully installed 'toastr 2.1.1' to Vidly
+
+//Create encryption on web config - open Visual Studio Tools and run as administrator
+C:\Windows\system32>aspnet_regiis -pef "appSettings" "E:\MVC5-Tutorial-Video-Rental\Deploy" -prov "DataProtectionConfigurationProvider"
+
+//To decrypt
+C:\Windows\system32>aspnet_regiis -pdf "appSettings" "E:\MVC5-Tutorial-Video-Rental\Deploy"
